@@ -15,12 +15,20 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Grid Padding="10">
-                            <HorizontalStackLayout>
-                                <CheckBox/>
-                                <Label Text="{Binding}" VerticalOptions="Center" Margin="10,0" FontSize="20"/>
-                            </HorizontalStackLayout>
-                        </Grid>
+                        <SwipeView>
+                            <SwipeView.RightItems>
+                                <SwipeItems Mode="Execute">
+                                    <SwipeItem Text="Delete" BackgroundColor="Red" Invoked="OnDeleteTaskSwiped"/>
+                                </SwipeItems>
+                            </SwipeView.RightItems>
+                            
+                            <Grid Padding="10">
+                                <HorizontalStackLayout>
+                                    <CheckBox/>
+                                    <Label Text="{Binding}" VerticalOptions="Center" Margin="10,0" FontSize="20"/>
+                                </HorizontalStackLayout>
+                            </Grid>
+                        </SwipeView>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
